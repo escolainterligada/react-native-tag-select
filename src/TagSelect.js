@@ -115,6 +115,7 @@ class TagSelect extends React.Component {
   }
 
   render () {
+		var theme_ = "default";
     return (
       <View
         style={[
@@ -123,11 +124,24 @@ class TagSelect extends React.Component {
         ]}
       >
         {this.props.data.map((i) => {
+					var lbl = "";
+					if (this.itemsSelected && this.itemsSelected.length > 0)
+					{
+							lbl = this.itemsSelected[0].label;
+							if (lbl > "4.5")
+							{
+								theme_ = "success";
+							} else {
+								theme_ = "danger";
+							}
+
+					}
           return (
             <TagSelectItem
               {...this.props}
               label={i[this.props.labelAttr] ? i[this.props.labelAttr] : i}
               key={i[this.props.keyAttr] ? i[this.props.keyAttr] : i}
+							theme={theme_}
               onPress={this.handleSelectItem.bind(this, i)}
               selected={(this.state.value[i[this.props.keyAttr]] || this.state.value[i]) && true}
             />
