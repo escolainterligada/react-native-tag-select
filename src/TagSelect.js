@@ -124,18 +124,18 @@ class TagSelect extends React.Component {
         ]}
       >
         {this.props.data.map((i) => {
-					var lbl = "";
-					if (this.itemsSelected && this.itemsSelected.length > 0)
-					{
-							lbl = this.itemsSelected[0].label;
-							if (lbl > "4.5")
-							{
-								theme_ = "success";
-							} else {
-								theme_ = "danger";
-							}
+		var lbl = "";
+		if (this.itemsSelected && this.itemsSelected.length > 0)
+		{
+				lbl = this.itemsSelected[0].label;
+				if (lbl > "4.5")
+				{
+					theme_ = "success";
+				} else {
+					theme_ = "danger";
+				}
 
-					}
+		}
           return (
             <TagSelectItem
               {...this.props}
