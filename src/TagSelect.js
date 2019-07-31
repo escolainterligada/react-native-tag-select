@@ -127,7 +127,7 @@ class TagSelect extends React.Component {
 		var lbl = "";
 		if (this.itemsSelected && this.itemsSelected.length > 0)
 		{
-				lbl = this.itemsSelected[0].label;
+				lbl = parseFloat(this.itemsSelected[0].label);
 				if (lbl > "4.5")
 				{
 					theme_ = "success";
